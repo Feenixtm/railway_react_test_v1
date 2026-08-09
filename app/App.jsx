@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Login from '../components/forms/Login'
 import SignUp from '../components/forms/SignUp'
+import MissingPage from '../components/MissingPage'
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
 				<Route path="/" element={<Home/>}></Route>
 				<Route path="login" element={<Login/>}></Route>
 				<Route path="sign-up" element={<SignUp/>}></Route>
+
+				<Route path="*" element={<MissingPage/>}></Route>
 			</Routes>
 
 			<Footer/>
