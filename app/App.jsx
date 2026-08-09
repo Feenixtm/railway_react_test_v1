@@ -8,6 +8,7 @@ import Footer from '../components/Footer'
 import Login from '../components/forms/Login'
 import SignUp from '../components/forms/SignUp'
 import MissingPage from '../components/MissingPage'
+import ProtectedRoute from '../components/ProtectedRoute'
 
 
 function App() {
@@ -17,11 +18,23 @@ function App() {
 			<Header/>
 
 			<Routes>
-				<Route path="/" element={<Home/>}></Route>
 				<Route path="login" element={<Login/>}></Route>
 				<Route path="sign-up" element={<SignUp/>}></Route>
 
-				<Route path="*" element={<MissingPage/>}></Route>
+				<Route path='/' element={
+					<ProtectedRoute>
+						<Home/>
+					</ProtectedRoute>
+				}>
+				</Route>
+
+				<Route path='*' element={
+					<ProtectedRoute>
+						<MissingPage/>
+					</ProtectedRoute>
+				}>
+				</Route>
+				
 			</Routes>
 
 			<Footer/>
