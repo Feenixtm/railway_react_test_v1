@@ -59,7 +59,7 @@ function App() {
 
   	return (
 		<>
-			<h1>Hi Jason</h1>
+			<h1 className='font-bold'>Hi Jason</h1>
 			<p>{ message }</p>
 
 			<button onClick={() => fetchDataFromTestPath()}>/test path</button>
